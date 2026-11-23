@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InternHub | Student Internship Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">💼 InternHub</div>
+
+            <button id="menuBtn" class="menu-btn" aria-label="Toggle menu">
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#internships">Internships</a></li>
+                <li><a href="#applications">My Applications</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="hero-label">YOUR CAREER STARTS HERE</span>
+
+            <h1>Find Your Dream <span>Internship</span></h1>
+
+            <p>
+                Discover opportunities, gain practical experience
+                and take your first step towards a successful career.
+            </p>
+
+            <a href="#internships" class="btn hero-btn">
+                Explore Internships
+            </a>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+        <div class="stat-card">
+            <h2 id="totalInternships">0</h2>
+            <p>Opportunities</p>
+        </div>
+
+        <div class="stat-card">
+            <h2 id="totalApplications">0</h2>
+            <p>Your Applications</p>
+        </div>
+
+        <div class="stat-card">
+            <h2 id="activeApplications">0</h2>
+            <p>Active Applications</p>
+        </div>
+    </section>
+
+    <!-- INTERNSHIPS -->
+    <section class="section" id="internships">
+
+        <div class="section-heading">
+            <span class="section-label">CAREER OPPORTUNITIES</span>
+            <h2>Explore Internships</h2>
+            <p>Find the right opportunity to develop your skills.</p>
+        </div>
+
+        <!-- SEARCH AND FILTER -->
+        <div class="search-container">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search internship or company..."
+            >
+
+            <select id="categoryFilter">
+                <option value="All">All Categories</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Data Science">Data Science</option>
+                <option value="AI/ML">AI/ML</option>
+                <option value="Cybersecurity">Cybersecurity</option>
+                <option value="UI/UX Design">UI/UX Design</option>
+            </select>
+
+        </div>
+
+        <div class="internship-grid" id="internshipGrid"></div>
+
+        <p class="empty-message" id="emptyMessage"></p>
+
+    </section>
+
+    <!-- APPLICATION TRACKER -->
+    <section class="section applications-section" id="applications">
+
+        <div class="section-heading">
+            <span class="section-label">APPLICATION TRACKER</span>
+            <h2>My Applications</h2>
+            <p>Track the internships you have applied for.</p>
+        </div>
+
+        <div class="application-list" id="applicationList"></div>
+
+        <p class="empty-message" id="applicationEmpty">
+            You haven't applied for any internships yet.
+        </p>
+
+    </section>
+
+    <!-- APPLICATION MODAL -->
+    <div class="modal" id="applicationModal">
+
+        <div class="modal-content">
+
+            <button class="close-btn" id="closeModal" aria-label="Close">
+                &times;
+            </button>
+
+            <h2>Apply for Internship</h2>
+            <p id="modalInternshipTitle"></p>
+
+            <form id="applicationForm">
+
+                <input type="hidden" id="selectedInternshipId">
+
+                <input
+                    type="text"
+                    id="studentName"
+                    placeholder="Full Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="studentEmail"
+                    placeholder="Email Address"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="studentCollege"
+                    placeholder="College Name"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="studentSkills"
+                    placeholder="Your Skills (e.g. Java, HTML, Python)"
+                    required
+                >
+
+                <textarea
+                    id="studentReason"
+                    placeholder="Why do you want this internship?"
+                    rows="4"
+                    required
+                ></textarea>
+
+                <button type="submit" class="btn submit-btn">
+                    Submit Application
+                </button>
+
+                <p id="formMessage"></p>
+
+            </form>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 InternHub – Student Internship Portal</p>
+        <p>Designed using HTML, CSS and JavaScript.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
